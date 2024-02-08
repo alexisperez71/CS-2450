@@ -88,10 +88,12 @@ class VirtualMachine:
             raise IndexError("Segmentation fault. Cannot write to that memory address")
 
     def load(self, i):
+        """Triggered by instruction '20'. Grabs number from a specific point in memory and puts it into accumulator"""
         self._accumulator = self._memory[int(self._memory[i][2:])]
 
 
     def store(self, i):
+        """Triggered by instruction '21'. Grabs number from the accumulator and puts it into a specific point in memory."""
         self._memory[int(self._memory[i][2:])] = self._accumulator
 
     def add(self):
