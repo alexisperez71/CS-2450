@@ -1,6 +1,6 @@
 from main import *
 class VirtualMachine:
-    def __init__(self, file = None):
+    def __init__(self, file = None, inputs_from_keyboard = []):
         self._memory = []
         self._accumulator = "+0000"
         self._file = file
@@ -9,8 +9,7 @@ class VirtualMachine:
                 for line in file:
                     self._memory.append(line.strip("\n").strip(" "))
         self._output = "Output:\n"
-
-    #check for inputs function
+        self._inputs_from_keyboard = inputs_from_keyboard
 
     def get_output(self):
         return self._output
@@ -77,7 +76,7 @@ class VirtualMachine:
             elif curr_operator == "20":
                 self.load(curr_operand)
 
-            elif curr_operator == "21":
+            elif curr_operator == "21": 
                 self.store(curr_operand)
             
             elif curr_operator == "30":
@@ -137,8 +136,7 @@ class VirtualMachine:
         """Triggered by instruction '10'. Reads a word from the keyboard in to a specific location in memory"""
         if len(self._memory) > count:
             self.resize_memory()
-        # set user word to the first element of the input list. Remove that element.
-        user_word = input("Enter a 4-digit command (Digits 0-9 only): ")
+        user_word = self._inputs_from_keyboard.pop(0)
         if len(user_word) > 4:
             raise ValueError("Command too long")
         if address < 100 and address >= 0:
