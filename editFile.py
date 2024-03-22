@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from tkinter.colorchooser import askcolor
 
 class EditFile():
     def __init__(self):
@@ -21,14 +22,24 @@ class EditFile():
         # Function to save files
         with open(self.file_to_open, 'w') as file_to_save:
             save = file_to_save.write(self.text_box.get(1.0, END))
+        
+    def change_color(self):
+        color = askcolor()
+        self.gui.configure(bg=color[1])
+        self.gui.update_idletasks()
     
     def create_gui(self):
+        # Adding UVsim branding
+        self.gui.title("UVsim")
         # Creating the open file button  upon click of the button, the "command" area executes the save file function
         open_button = Button(self.gui, text="Open File", command=self.open_file)
         open_button.pack(pady=20)
         # Creating the save button, upon click of the button, the "command" area executes the save file function
         save_button = Button(self.gui, text="Save", command=self.save_file)
         save_button.pack(pady=20)
+
+        change_color_button = Button(self.gui, text="Change Color", command=self.change_color)
+        change_color_button.pack(pady=20)
         
         #executes the gui
         self.gui.mainloop()

@@ -1,0 +1,33 @@
+arithmetic class
+
+class Math:
+    init (number that's read in)
+        sign = first sign
+        operation = 1-2 numbers
+        value = 3-4
+    
+    def add(self)
+        value + memory
+        return newvalue
+    
+    def subtract(self)
+        value - memory
+        return newvalue
+    
+    def divide(self)
+        value / memory
+        return newvalue
+    
+    def multiply(self, input)
+        value * memory
+        return newvalue
+
+
+run class
+
+class Run:
+    init()
+    Math()
+    if input[1-2] == 10:
+        add(input memory)
+    
