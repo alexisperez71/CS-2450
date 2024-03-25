@@ -10,6 +10,7 @@
 +0000
 +0000
 
+<<<<<<< HEAD
 This is a test!
 
 Hi Dani, this is a test!
@@ -19,3 +20,5 @@ Hey cole, this is a test!
 
 
 
+=======
+>>>>>>> 3ce384f24f31f2739fcf8c1764602f3c43f460bd
