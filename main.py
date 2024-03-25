@@ -1,5 +1,5 @@
 import tkinter
-import customtkinter 
+import customtkinter
 import SettingGui
 from VirtualMachine import *
 from tkinter import colorchooser
@@ -7,7 +7,6 @@ from editFile import *
  
 # Function that will be invoked when the
 # button will be clicked in the main window
-
 
 def set_colors():
     customtkinter.set_default_color_theme("settings.json")
@@ -84,6 +83,7 @@ def main():
     # entry2.pack(pady=12, padx=10)
     file_editor = EditFile()
     file_editor.create_gui()
+    file_editor.assemble()
     root.mainloop()
     
 

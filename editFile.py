@@ -1,9 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
-from tkinter import messagebox
 import customtkinter
-from VirtualMachine import *
-import main
+from tkinter.colorchooser import askcolor
 
 class EditFile():
     def __init__(self):
@@ -111,16 +109,17 @@ class EditFile():
         open_button = customtkinter.CTkButton(self.gui, text="Open File", command=self.open_file)
         open_button.pack(pady=12, padx=10)
         # Creating the save button, upon click of the button, the "command" area executes the save file function
-        save_button = customtkinter.CTkButton(self.gui, text="Save", command=self.save_file)
-        save_button.pack(pady=12, padx=10)
+        save_button = Button(self.gui, text="Save", command=self.save_file)
+        save_button.pack(pady=20)
 
-        # Creating the save button, upon click of the button, the "command" area executes the save file function
-        save_button = customtkinter.CTkButton(self.gui, text="Assemble", command=self.assemble)
-        save_button.pack(pady=12, padx=10)
+        # change_color_button = Button(self.gui, text="Change Color", command=self.change_color)
+        # change_color_button.pack(pady=20)
         
         #executes the gui
         self.gui.mainloop()
         
         
+gui = EditFile()
 
+gui.create_gui()
 
